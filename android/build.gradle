@@ -4,18 +4,18 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:8.5.1'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
 //      gradle.projectsEvaluated {
@@ -29,10 +29,11 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 32
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 21
+        minSdk 21
+        targetSdk 34
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -41,6 +42,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    namespace 'com.example.easy_ticket_b08'
 }
 
 
